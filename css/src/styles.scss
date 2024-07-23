@@ -13,6 +13,13 @@ p {
   margin: 0 !important;
 }
 
+html .archive {
+  margin-top: 125px !important;
+  @media only screen and (min-width: 1024px) {
+    margin-top: 125px !important;
+  }
+}
+
 .container {
   max-width: 100%;
   margin: 0 auto;
@@ -382,9 +389,8 @@ p {
       top: 60%;
       bottom: inherit;
       flex-direction: row;
-      width: 900px;
+      width: max-content;
       column-gap: 0;
-      width: auto;
       transform: translate(-50%, -50%);
     }
 
@@ -1286,4 +1292,8 @@ p {
       }
     }
   }
+}
+
+body {
+  margin: 0 !important;
 }

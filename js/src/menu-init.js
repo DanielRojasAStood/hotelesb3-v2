@@ -14,13 +14,18 @@ $(document).ready(function () {
     event.preventDefault();
   });
 
-  $('.menu-menu-espanol-container .menu-item-has-children a').click(function(e) {
-    e.preventDefault();
-    $(this).next('.sub-menu').slideToggle();
-    $(this).parent().siblings().find('.sub-menu').slideUp();
-    $(this).parent().siblings().find('.menu-link').removeClass('active');
-    $(this).toggleClass('active');
-    e.stopPropagation();
+  $('.menu-menu-espanol-container .menu-item-has-children > a').click(function(e) {
+    const $this = $(this);
+    const $submenu = $this.next('.sub-menu');
+    
+    if ($submenu.length > 0) {
+      e.preventDefault();
+      $submenu.slideToggle();
+      $this.parent().siblings().find('.sub-menu').slideUp();
+      $this.parent().siblings().find('.menu-link').removeClass('active');
+      $this.toggleClass('active');
+      e.stopPropagation();
+    }
   });
 });
 
@@ -38,24 +43,4 @@ $(window).scroll(function () {
   } else {
     $headerSticky.removeClass("is-scroll");
   }
-
-  // $('section').each(function() {
-  //   if (isScrolledIntoView($(this), $(window).height() / 4)) {
-  //     $(this).addClass('animated');
-  //   }
-  // });
-
-  // function isScrolledIntoView(elem, threshold) {
-  //   var docViewTop = $(window).scrollTop();
-  //   var docViewBottom = docViewTop + $(window).height();
-  //   var elemTop = $(elem).offset().top;
-  //   var elemBottom = elemTop + $(elem).height();
-  //   var middleThreshold = $(window).height() / 2;
-  //   return ((elemTop + threshold <= docViewBottom) && (elemBottom >= docViewTop + middleThreshold));
-  // }
-  
-
-  
-
-
 });
