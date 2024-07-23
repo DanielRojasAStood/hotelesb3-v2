@@ -14,16 +14,18 @@ $(document).ready(function () {
     event.preventDefault();
   });
 
-  $('.menu-menu-espanol-container .menu-item-has-children > a').click(function(e) {
+  $(".menu-menu-espanol-container .menu-item-has-children > a").click(function (
+    e
+  ) {
     const $this = $(this);
-    const $submenu = $this.next('.sub-menu');
-    
+    const $submenu = $this.next(".sub-menu");
+
     if ($submenu.length > 0) {
       e.preventDefault();
       $submenu.slideToggle();
-      $this.parent().siblings().find('.sub-menu').slideUp();
-      $this.parent().siblings().find('.menu-link').removeClass('active');
-      $this.toggleClass('active');
+      $this.parent().siblings().find(".sub-menu").slideUp();
+      $this.parent().siblings().find(".menu-link").removeClass("active");
+      $this.toggleClass("active");
       e.stopPropagation();
     }
   });

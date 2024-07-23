@@ -51,7 +51,6 @@ export function initSlickCarousels() {
         },
       },
     ],
-
   });
 
   $(".slickGallery").each(function () {
