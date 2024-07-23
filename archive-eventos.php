@@ -21,7 +21,10 @@ $heading_level_h3  = 'h3';
 
 <main>
     <!-- Title Banner -->
-        <?php get_template_part('template-parts/sections/section', 'title-banner', array('title' => $title, 'banner' => $banner, 'class' => '' )) ?>
+        <?php 
+        set_query_var('group_title', $group_title);
+        get_template_part('template-parts/sections/section', 'title-banner', array('title' => $title, 'banner' => $banner, 'class' => 'tex' )) 
+        ?>
     <!-- End Title Banner -->
 
     <section>
